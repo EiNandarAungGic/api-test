@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\TourController;
+use App\Http\Controllers\TravelController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -33,7 +36,20 @@ Route::middleware('auth:sanctum')->group(function () {
         // Route::get('/delete/{id}', [AdminController::class, 'destroy'])->name('delete');
         // Route::get('/search', [AdminController::class, 'search'])->name('search');
     });
+
+    Route::prefix('comments')->group(function () {
+        Route::get('/', [CommentController::class, 'index']);
+        Route::post('/store', [CommentController::class, 'store']);
+        Route::put('update/{id}', [CommentController::class, 'update']);
+        Route::delete('/delete/{id}', [CommentController::class, 'destroy']);
+    });
     
+    Route::prefix('travels')->group(function () {
+        Route::get('/', [TravelController::class, 'index']);
+    });
+
+    Route::get('/travels/{travel:slug}/tours', [TourController::class, 'index']);
+
     Route::apiResource('/users', UserController::class);
 });
 

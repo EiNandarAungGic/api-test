@@ -17,26 +17,27 @@ class PostSeeder extends Seeder
             [
                 'title'       => 'Post I',
                 'content'      => 'This is post 1 content',
+                'comment_id'  => 1,
             ],
             [
                 'title'       => 'Post II',
                 'content'      => 'This is post 2 content',
+                'comment_id'  => 2,
             ],
             [
                 'title'       => 'Post III',
                 'content'      => 'This is post 3 content',
+                'comment_id'  => 2,
             ],
             [
                 'title'       => 'Post IV',
                 'content'      => 'This is post 4 content',
+                'comment_id'  => 3,
             ],
             [
                 'title'       => 'Post V',
                 'content'      => 'This is post 5 content',
-            ],
-            [
-                'title'       => 'Post VI',
-                'content'      => 'This is post 6 content',
+                'comment_id'  => 4,
             ],
         ];
 
